@@ -29,7 +29,7 @@ def hello_world():
         strokeColour = "#FFFF00"
     else :
         strokeColour = "#0000FF"
-    return render_template("map_test.html", latArray=latArray, lngArray=lngArray, strokeColour=strokeColour, potholeDepth=potholeDepth)
+    return render_template("map_test.html", latArray=latArray, lngArray=lngArray, strokeColour=strokeColour, potholeDepth=potholeDepth, lenArray = len(latArray))
 @app.route('/someroute')
 def someroute():
     return("No bugs here")
@@ -43,4 +43,3 @@ def haversine(lat1,lng1,lat2,lng2): #find distance between 2 GPS coordinates
     a = sin(dLat/2)**2+cos(lat1)*cos(lat2)*sin(dLng/2)**2
     c=2*asin(sqrt(a))
     return radius*c
-
